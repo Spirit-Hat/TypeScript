@@ -98,7 +98,7 @@ function  logFirstAvailable(worker){
 function Main() {
 //     logFirstAvailable(getAllworkers());
 //     //task 1.2
- //  getWorkersNamesByCategory('BusinessAnalyst');
+   getWorkersNamesByCategory('BusinessAnalyst');
 //     //task 1.3
 //     console.log("1.3")
 //     getAllworkers().forEach(some => {
