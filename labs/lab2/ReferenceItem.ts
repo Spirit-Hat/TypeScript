@@ -3,7 +3,7 @@ class ReferenceItem {
     //
     // readonly year: number
     private _publisher: string
-    static department: string = "Науково-технічна бібліотека ім. Г. І. Денисенка КПІ ім. Ігоря Сікорського"
+
 
     // constructor(newTitle: string, newYear: number) {
     //     this.year = newYear
@@ -15,7 +15,7 @@ class ReferenceItem {
     }
 
     printItem(): void {
-        console.log(`The ${this.title} was published in ${this.year} department ${ReferenceItem.department}`)
+        console.log(`The ${this.title} was published in ${this.year}`)
     }
 
     get publisher(): string {
