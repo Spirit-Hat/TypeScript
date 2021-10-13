@@ -96,27 +96,27 @@ function  logFirstAvailable(worker){
 
 
 function Main() {
-//     logFirstAvailable(getAllworkers());
-//     //task 1.2
+    logFirstAvailable(getAllworkers());
+    //task 1.2
    getWorkersNamesByCategory('BusinessAnalyst');
-//     //task 1.3
-//     console.log("1.3")
-//     getAllworkers().forEach(some => {
-//         if (some.Category == 'Developer')
-//     console.log(some.Name + "  " + some.surname)
-//
-// })
-//    console.log(getWorkerByID(3))
-//     console.log("1.4")
-//     let myId = createCustomerID("Ann", 10)
-//     console.log(myId)
-//
-//     let myCustumer = {name: "Ann", id: 10}
-//     let IdGenerator = ({name, id}) => createCustomerID(name, id)
-//     console.log(IdGenerator(myCustumer))
-//     createCustomer('Andrey')
-//     createCustomer('Andrey', 19)
-//     createCustomer('Andrey', 19, 'Toronto')
+    //task 1.3
+    console.log("1.3")
+    getAllworkers().forEach(some => {
+        if (some.Category == 'Developer')
+    console.log(some.Name + "  " + some.surname)
+
+})
+   console.log(getWorkerByID(3))
+    console.log("1.4")
+    let myId = createCustomerID("Ann", 10)
+    console.log(myId)
+
+    let myCustumer = {name: "Ann", id: 10}
+    let IdGenerator = ({name, id}) => createCustomerID(name, id)
+    console.log(IdGenerator(myCustumer))
+    createCustomer('Andrey')
+    createCustomer('Andrey', 19)
+    createCustomer('Andrey', 19, 'Toronto')
 
 
     let myWorkers = сheckoutWorkers('ann', [ 1,2, 0])

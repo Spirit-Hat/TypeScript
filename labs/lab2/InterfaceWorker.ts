@@ -1,4 +1,4 @@
-import {PrizeLogger} from "../Новая папка/PrizeLogger";
+import {PrizeLogger} from "./InterfacePrizeLogger";
 
 enum Category {
     BusinessAnalyst   ,

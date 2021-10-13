@@ -26,19 +26,6 @@ function getAllworkers(): worker[] {
 
 }
 
-function createCustomer(name: string, age?: number, city?: string) {
-    if (age == undefined && city == undefined) {
-        console.log(name)
-    } else if (age == undefined) {
-        console.log(name + " " + city)
-    } else if (city == undefined) {
-        console.log(name + " " + age)
-    } else {
-        console.log(name + " " + age + " " + city)
-    }
-
-
-}
 
 function PrintWorker(worker: worker) {
     console.log( worker.Name + worker.surname + "got salary" + worker.salary )
@@ -51,19 +38,7 @@ function getWorkerByID(id: number, worker: { Name: string, surname: string, avai
     return null
 }
 
-function getWorkersNamesByCategory(category = Category[2]) {
-    console.log("1.2");
-    let worker = getAllworkers()
-    for (let item of worker) {
-        if (item.Category == category) {
-            logWorkersNames(item.Name + "  " + item.surname);
-        }
-    }
-}
 
-function logWorkersNames(data) {
-    console.log(data);
-}
 
 interface workers {
     length: number;
@@ -79,17 +54,7 @@ function createCustomerID(nameZam: string, id: number): string {
     return myID
 }
 
-function logFirstAvailable(worker) {
-    console.log("1.1")
-    const some = worker as workers;
-    console.log("кількість робітників в масиві=" + some.length);
-    for (let item of worker) {
-        if (item.available == true) {
-            console.log(item.Name + "  " + item.surname);
-        }
-    }
 
-}
 
 
 function Main() {
@@ -112,20 +77,21 @@ function Main() {
 
 
     let favoriteAuthor: Author = {
-        name: "Egor",
-        email: "egor_for_youtube@gmail.com",
-        numBooksPublished: 45
+        name: "User",
+        email: "User@gmail.com",
+        numBooksPublished: 223
     }
     let favoriteLibrarian: Librarian = {
-        name: "Leo",
-        email: "LEO_f@gmail.com",
-        department: "ДЕТСКАЯ БИБЛИОТЕКА БФ №10",
+        name: "User",
+        email: "User@gmail.com",
+        department: "Librari",
         assistCustomer(custName: string): void {
             console.log(custName)
         }
     }
 
     console.log(favoriteAuthor)
+    favoriteLibrarian.assistCustomer("some")
     console.log(favoriteLibrarian)
 
     console.log("2.4")
