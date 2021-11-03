@@ -1,0 +1,19 @@
+  <div *ngIf="user">
+    <table>
+      <tr><th>Name</th><th>Email</th><th>Login</th><th>Password</th><th>Phonenumber</th><th> </th></tr>
+      <tr *ngFor="let item of user" (click)="openDialog(item)">
+        <th>{{item.name}}</th>
+        <th>{{item.email}}</th>
+        <th>{{item.login}}</th>
+        <th>{{item.password}}</th>
+        <th>{{item.phonenumber}}</th>
+        <mat-checkbox
+          (change)="test(item); "
+        >onChange me!</mat-checkbox>
+
+      </tr>
+    </table>
+  </div>
+  <app-favorite-user
+  [FavoritreUser]="favorite"></app-favorite-user>
+
