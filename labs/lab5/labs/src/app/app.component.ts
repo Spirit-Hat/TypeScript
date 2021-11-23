@@ -5,6 +5,8 @@ import {range} from "rxjs";
 import {User} from "./model/user.model";
 import {UsersService} from "./services/users.service";
 
+import {SimpleServiceService} from "./simple-service.service"
+
 // import {Users} from "./model/Users.Interface";
 
 import {MAT_DIALOG_DATA,MatDialog} from '@angular/material/dialog';
@@ -35,7 +37,7 @@ export class AppComponent {
   favorite:Users[] = []
 
 
-  constructor(  private userService:UsersService,public dialog: MatDialog) {
+  constructor(  private userService:UsersService,public dialog: MatDialog, private  simpleService: SimpleServiceService) {
     this.user = this.userService.getUser()
   }
   openDialog(object:any){
@@ -55,8 +57,12 @@ export class AppComponent {
     this.favorite.push(object)
     console.log(this.favorite)
   }
-
-
+  ngOnInit(): void {
+    this.simpleService.favorites$.subscribe((count)=>this.test(count))
+  }
+  private log(data: any): void {
+    console.log(data);
+  }
 }
 // @Component({
 //   selector: 'dialog-data-example-dialog',

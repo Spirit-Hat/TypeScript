@@ -1,3 +1,4 @@
+<!-- {{user | json}}-->
   <div *ngIf="user">
     <table>
       <tr><th>Name</th><th>Email</th><th>Login</th><th>Password</th><th>Phonenumber</th><th> </th></tr>
@@ -7,13 +8,14 @@
         <th>{{item.login}}</th>
         <th>{{item.password}}</th>
         <th>{{item.phonenumber}}</th>
-        <mat-checkbox
-          (change)="test(item); "
-        >onChange me!</mat-checkbox>
+<!--        <mat-checkbox-->
+<!--          (change)="test(item); "-->
+<!--        >onChange me!</mat-checkbox>-->
 
       </tr>
     </table>
   </div>
-  <app-favorite-user
+<!-- <button (click)="test2()">Favorite</button>-->
+ <app-favorite-user
   [FavoritreUser]="favorite"></app-favorite-user>
 

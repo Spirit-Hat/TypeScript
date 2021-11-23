@@ -1,0 +1,53 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <a routerLink="/favorite" routerLinkActive="active"> favorite </a>
+
+  </ion-toolbar>
+</ion-header>
+
+<!--<ion-content [fullscreen]="true">-->
+
+<!--  <div id="container">-->
+<!--    <div *ngIf="user">-->
+
+<!--      <table>-->
+<!--        <tr><th>Name</th><th>Email</th><th>Login</th><th>Password</th><th>Phonenumber</th><th> </th></tr>-->
+<!--        <tr *ngFor="let item of user" (click)="showAlert(item)" >-->
+<!--          <th>{{item.name}}</th>-->
+<!--          <th>{{item.email}}</th>-->
+<!--          <th>{{item.login}}</th>-->
+<!--          <th>{{item.password}}</th>-->
+<!--          <th>{{item.phonenumber}}</th>-->
+<!--         <ion-checkbox (ionChange)="test(item)" [(ngModel)]="item.isChecked"></ion-checkbox>-->
+
+<!--          &lt;!&ndash;        <mat-checkbox&ndash;&gt;-->
+<!--          &lt;!&ndash;          (change)="test(item); "&ndash;&gt;-->
+<!--          &lt;!&ndash;        >onChange me!</mat-checkbox>&ndash;&gt;-->
+
+<!--        </tr>-->
+<!--      </table>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+
+
+<!--</ion-content>-->
+
+
+<ion-grid>
+  <ion-row class="header-table">
+    <ion-col >Name </ion-col> <ion-col>Email </ion-col><ion-col>Login </ion-col><ion-col>Password </ion-col><ion-col>Phonenumber </ion-col>
+  </ion-row>
+  <ion-row *ngFor="let item of user" (click)="showAlert(item)" >
+              <ion-col>{{item.name }}</ion-col>
+              <ion-col>{{item.email }}</ion-col>
+              <ion-col>{{item.login }}</ion-col>
+              <ion-col>{{item.password }}</ion-col>
+              <ion-col>{{item.phonenumber }}</ion-col>
+             <ion-checkbox (ionChange)="test(item)" [(ngModel)]="item.isChecked"></ion-checkbox>
+  </ion-row>
+
+
+</ion-grid>
