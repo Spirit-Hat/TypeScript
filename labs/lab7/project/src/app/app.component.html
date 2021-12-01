@@ -1,0 +1,65 @@
+<form [formGroup]="NewForm">
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required autocomplete="off"
+           formControlName="email">
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+         class="alert alert-danger" id = "EmailErrors">
+      <div *ngIf="EmailErrors()">
+        {{EmailErrors()}}
+      </div>
+    </div>
+
+    <label for="login"><b>Login</b></label>
+    <input type="text" placeholder="Enter Login" name="login" id="login" required autocomplete="off"
+           formControlName="Login">
+    <div *ngIf="Login.invalid && (Login.dirty || Login.touched)"
+         class="alert alert-danger">
+      <div *ngIf="LoginErrors()">
+        {{LoginErrors()}}
+      </div>
+    </div>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required autocomplete="off"
+           formControlName="password">
+    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+         class="alert alert-danger">
+      <div *ngIf="PasswordErrors()">
+        {{PasswordErrors()}}
+      </div>
+    </div>
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required
+           autocomplete="off" formControlName="Repeatpassword">
+    <div *ngIf="repeat.invalid && (repeat.dirty || repeat.touched)"
+         class="alert alert-danger">
+      <div *ngIf=" RepeatErrors()">
+        {{ RepeatErrors()}}
+      </div>
+    </div>
+    <button [disabled]="NewForm.invalid" class="registerbtn" id="submit-button" mat-button color="primary" >Register</button>
+  </div>
+</form>
+<!--<form [formGroup]="NewForm" >-->
+<!--<input type="text" id="name" class="form-control"-->
+<!--       formControlName="name" required>-->
+
+<!--<div *ngIf="name.invalid && (name.dirty || name.touched)"-->
+<!--     class="alert alert-danger">-->
+
+<!--  <div *ngIf="name.errors?.['required']">-->
+<!--    Name is required.-->
+<!--  </div>-->
+<!--  <div *ngIf="name.errors?.['minlength']">-->
+<!--    Name must be at least 4 characters long.-->
+<!--  </div>-->
+<!--  <div *ngIf="name.errors?.['forbiddenName']">-->
+<!--    Name cannot be Bob.-->
+<!--  </div>-->
+<!--</div>-->
+<!--</form>-->
