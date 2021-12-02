@@ -62,13 +62,88 @@ describe('AppComponent', () => {
   describe('Check Input', () =>{
 
     it('Check Email', () => {
+
       const nativeElement = fixture.nativeElement;
-      //nativeElement.querySelector('#email');
-      expect( nativeElement.querySelector('#email').placeholder).toBe('Enter Email');
-      component.NewForm.Login = 'njnn'
-      fixture.detectChanges();
-      expect(nativeElement.querySelector('#EmailErrors').textContent).toBe('Enter')
+
+      let email = component.NewForm.controls['email']
+
+      email.setValue('njnn')
+      expect(component.EmailErrors()).toBe('Incorrect email')
+
+      email.setValue(' ')
+      expect(component.EmailErrors()).toBe('Incorrect email')
+
+      email.setValue('')
+      expect(component.EmailErrors()).toBe('Need to fill')
+
+      email.setValue('Test@')
+      expect(component.EmailErrors()).toBe('Incorrect email')
+
+      email.setValue('Test@Ukr.net')
+      expect(component.EmailErrors()).toBe('')
     });
+
+    it('Check Login', () => {
+
+      const nativeElement = fixture.nativeElement;
+
+      let Login = component.NewForm.controls['Login']
+
+      Login.setValue('')
+      expect(component.LoginErrors()).toBe('Need to fill')
+
+      Login.setValue(' ')
+      expect(component.LoginErrors()).toBe('You can use a-Z')
+
+      Login.setValue('aa')
+      expect(component.LoginErrors()).toBe('You can use a-Z')
+
+      Login.setValue('aaaaaaaaaaaaaaaaaaaaa')
+      expect(component.LoginErrors()).toBe('You can use a-Z')
+
+    });
+
+    it('Check Password', () => {
+
+      const nativeElement = fixture.nativeElement;
+
+      let Password = component.NewForm.controls['password']
+
+      Password.setValue('')
+      expect(component.PasswordErrors()).toBe('Need to fill')
+
+      Password.setValue(' ')
+      expect(component.PasswordErrors()).toBe('You can use a-Z')
+
+      Password.setValue('aa')
+      expect(component.PasswordErrors()).toBe('You can use a-Z')
+
+      Password.setValue('aaaaaaaaaaaaaaaaaaaaa')
+      expect(component.PasswordErrors()).toBe('You can use a-Z')
+
+    });
+
+    it('Check RepeatPassword', () => {
+
+      const nativeElement = fixture.nativeElement;
+
+      let RepeatPassword = component.NewForm.controls['Repeatpassword']
+
+      RepeatPassword.setValue('')
+      expect(component.RepeatErrors()).toBe('Need to fill')
+
+      RepeatPassword.setValue(' ')
+      expect(component.RepeatErrors()).toBe('You can use a-Z')
+
+      RepeatPassword.setValue('aa')
+      expect(component.RepeatErrors()).toBe('You can use a-Z')
+
+      RepeatPassword.setValue('aaaaaaaaaaaaaaaaaaaaa')
+      expect(component.RepeatErrors()).toBe('You can use a-Z')
+
+    });
+
+
 
   });
 

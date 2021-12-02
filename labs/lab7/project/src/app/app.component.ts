@@ -12,17 +12,18 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.NewForm = new FormGroup({
-      'Login': new FormControl(null, [Validators.required, Validators.min(3),
-        Validators.max(15)]),
+      'Login': new FormControl(null, [Validators.required,
+       Validators.pattern('^[\\w\\d]{3,20}$')]),
       'email': new FormControl(null, [Validators.required,Validators.email]),
       'password': new FormControl(null, [Validators.required,
-        Validators.pattern('^[\\w\\d]{1,20}$')]),
+        Validators.pattern('^[\\w\\d]{3,20}$')]),
       'Repeatpassword': new FormControl(null, [Validators.required,
-        Validators.pattern('^[\\w\\d]{1,20}$')])
+        Validators.pattern('^[\\w\\d]{3,20}$')])
     })
-    console.log(this.Login.errors?.['minlength'])
+    // console.log(this.EmailErrors())
+    // console.log("123456")
 
-    // this.NewForm.valueChanges.subscribe((value: any) => console.log(value));
+    console.log(this.Login.errors['min'])
   }
 
   // RepeatPassword(control: FormGroup) {
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit {
   // }
 
   LoginErrors() {
-    return this.Login.errors?.['required'] ? 'Enter' : this.Login.errors?.['pattern'] ? 'You can use a-Z' : ''
+    return this.Login.errors?.['required'] ? 'Need to fill' :  this.Login.errors?.['pattern'] ? 'You can use a-Z' :''
   }
 
   EmailErrors() {
@@ -48,7 +49,7 @@ export class AppComponent implements OnInit {
   }
 
   RepeatErrors() {
-    return this.repeat.errors?.['required'] ? 'Need to fill' : this.repeat.errors?.['pattern'] ? 'Incorrect' : ''
+    return this.repeat.errors?.['required'] ? 'Need to fill' : this.repeat.errors?.['pattern'] ? 'You can use a-Z' : ''
   }
 
   Test(){

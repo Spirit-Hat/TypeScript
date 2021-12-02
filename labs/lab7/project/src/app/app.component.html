@@ -1,15 +1,15 @@
+
 <form [formGroup]="NewForm">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
-
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" required autocomplete="off"
            formControlName="email">
-    <div *ngIf="email.invalid && (email.dirty || email.touched)"
-         class="alert alert-danger" id = "EmailErrors">
-      <div *ngIf="EmailErrors()">
+    <div *ngIf="email.invalid && email.touched"
+         class="alert alert-danger" >
+      <div *ngIf="EmailErrors()" id = "EmailErrors">
         {{EmailErrors()}}
       </div>
     </div>
@@ -30,7 +30,7 @@
     <div *ngIf="password.invalid && (password.dirty || password.touched)"
          class="alert alert-danger">
       <div *ngIf="PasswordErrors()">
-        {{PasswordErrors()}}
+        <p> {{PasswordErrors()}}</p>
       </div>
     </div>
     <label for="psw-repeat"><b>Repeat Password</b></label>
