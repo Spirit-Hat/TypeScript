@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Information User</h2>
+<mat-dialog-content class="mat-typography">
+  <p>User name :{{data.name}} , email: {{data.email}},
+    login: {{data.login}}, password: {{data.password}},
+    phonenumber: {{data.phonenumber}}.</p>
+  </mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button (click)="favorite()"  mat-dialog-close>Favorite</button>
+
+  <button mat-button mat-dialog-close>Cancel</button>
+
+</mat-dialog-actions>

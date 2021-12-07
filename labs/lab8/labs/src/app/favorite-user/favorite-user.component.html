@@ -1,0 +1,13 @@
+<div *ngIf="FavoritreUser[0] != null">
+<table>
+  <tr><th>Name</th><th>Email</th><th>Login</th><th>Password</th><th>Phonenumber</th><th> </th></tr>
+  <tr *ngFor="let item of FavoritreUser" >
+    <th>{{item.name}}</th>
+    <th>{{item.email}}</th>
+    <th>{{item.login}}</th>
+    <th>{{item.password}}</th>
+    <th>{{item.phonenumber}}</th>
+  </tr>
+</table>
+</div>
+

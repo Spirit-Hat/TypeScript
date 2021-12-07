@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm&family=Fruktur&display=swap');
+table {
+  border: 1px solid #6cf;
+  background-color: #e9e9e9;
+;
+
+}
+th {
+  /*#font-family: 'Fruktur', cursive;*/
+  font-family: 'Charm', cursive;
+
+  font-weight: normal;
+  font-size: 18px;
+  color: black;
+  text-transform: uppercase;
+  /*border-right: 1px solid #0865c2;*/
+  /*border-top: 1px solid #0865c2;*/
+  /*border-left: 1px solid #0865c2;*/
+  /*border-bottom: 1px solid white;*/
+  padding: 20px;
+  width: 50%;
+}
+td {
+  color: #669;
+  /*border-right: 1px dashed #6cf;*/
+  padding: 10px 20px;
+  width: 50%;
+}
