@@ -9,7 +9,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatDialogModule} from "@angular/material/dialog";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {DialogContentExampleDialog} from "./Popup/popup";
+import {DialogContentExampleDialog,Popup} from "./Popup/popup";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { FavoriteUserComponent } from './favorite-user/favorite-user.component';
 
@@ -18,6 +18,7 @@ import { FavoriteUserComponent } from './favorite-user/favorite-user.component';
   declarations: [
     AppComponent,
     DialogContentExampleDialog,
+    Popup,
     FavoriteUserComponent
   ],
   imports: [
@@ -30,7 +31,7 @@ import { FavoriteUserComponent } from './favorite-user/favorite-user.component';
     MatCheckboxModule
 
   ],
-  providers: [],
+  providers: [Popup],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@
   <div *ngIf="user">
     <table>
       <tr><th>Name</th><th>Email</th><th>Login</th><th>Password</th><th>Phonenumber</th><th> </th></tr>
-      <tr *ngFor="let item of user" (click)="openDialog(item)">
+      <tr *ngFor="let item of user" (click)="popup.openDialog(item)">
         <th>{{item.name}}</th>
         <th>{{item.email}}</th>
         <th>{{item.login}}</th>

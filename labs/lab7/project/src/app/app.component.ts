@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
   }
 
   Test(){
-
+    alert("success");
   }
 
 

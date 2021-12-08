@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url(https://proprikol.ru/wp-content/uploads/2019/08/kartinki-na-zadnij-fon-38.jpg) ;
+  background-size: 100%;
+
+}

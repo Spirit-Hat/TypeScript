@@ -25,7 +25,7 @@ export class UsersService {
         this.response = response;
         console.log(this.response)
 
-        for (var i = 0 ; i<20; i++) {
+        for (var i = 0 ; i<this.response.length; i++) {
           let name: string = ""
           name = this.response.results[i].name.title + " " +
             this.response.results[i].name.first  + " "

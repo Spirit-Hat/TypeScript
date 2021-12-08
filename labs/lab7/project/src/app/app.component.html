@@ -1,18 +1,18 @@
-
+<div class="">
 <form [formGroup]="NewForm">
   <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
+    <h1>Register form </h1>
     <hr>
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" id="email" required autocomplete="off"
            formControlName="email">
     <div *ngIf="email.invalid && email.touched"
-         class="alert alert-danger" >
+         class="alert-danger" >
       <div *ngIf="EmailErrors()" id = "EmailErrors">
         {{EmailErrors()}}
       </div>
     </div>
+
 
     <label for="login"><b>Login</b></label>
     <input type="text" placeholder="Enter Login" name="login" id="login" required autocomplete="off"
@@ -42,6 +42,7 @@
         {{ RepeatErrors()}}
       </div>
     </div>
-    <button [disabled]="NewForm.invalid" class="registerbtn" id="submit-button" mat-button color="primary" >Register</button>
+    <button [disabled]="NewForm.invalid" class="registerbtn" id="submit-button" mat-button color="primary" (click)="Test()">Register</button>
   </div>
 </form>
+</div>

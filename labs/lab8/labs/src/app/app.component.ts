@@ -8,8 +8,7 @@ import {UsersService} from "./services/users.service";
 import {SimpleServiceService} from "./services/simple-service.service"
 
 
-import {MAT_DIALOG_DATA,MatDialog} from '@angular/material/dialog';
-import {DialogContentExampleDialog} from "./Popup/popup";
+import { Popup} from "./Popup/popup";
 
 
 
@@ -35,19 +34,8 @@ export class AppComponent {
   user:User[] = []
 
 
-  constructor(  private userService:UsersService,public dialog: MatDialog, private  simpleService: SimpleServiceService) {
+  constructor(  private userService:UsersService,public popup: Popup, private  simpleService: SimpleServiceService) {
     this.user = this.userService.getUser()
-  }
-  openDialog(object:any){
-    const dialogRef = this.dialog.open(DialogContentExampleDialog,{
-      data: {
-        name: object.name,
-        email: object.email,
-        login: object.login,
-        password: object.password,
-        phonenumber: object.phonenumber
-      }
-      })
   }
 
 
